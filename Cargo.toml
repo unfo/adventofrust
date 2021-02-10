@@ -1,7 +1,7 @@
 [package]
 name = "adventofcode"
 version = "2.0.0"
-authors = ["Taneli Kaivola <2387813-tanelikaivola@users.noreply.gitlab.com>"]
+authors = ["jw", "dist"]
 edition = "2018"
 
 [dependencies]
