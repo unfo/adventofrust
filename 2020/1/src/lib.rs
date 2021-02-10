@@ -26,23 +26,28 @@ pub fn parse_input(input: &str) -> AnyhowResult<Input> {
 pub fn part1(_input: &Input) -> InputNum {
     let input = _input.into_iter();
     let totals:Vec<InputNum> = _input.into_iter()
-    	.cartesian_product(input)
-    	.filter(|p| p.0 + p.1 == 2020)
-    	.map(|(a,b)| a * b)
-    	.collect();
-	totals[0]
+        .cartesian_product(input)
+        .filter(|p| p.0 + p.1 == 2020)
+        .map(|(a,b)| a * b)
+        .collect();
+    totals[0]
 }
 
 
 pub fn part2(_input: &Input) -> usize {
-    let input = _input.to_vec();
-    let inputs:Vec<&Vec<_>> = vec![&input, &input, &input];
-    let totals:Vec<InputNum> = inputs.into_iter()
-    	.multi_cartesian_product()
-    	.filter(|p| p[0] + p[1] + p[2] == 2020)
-    	.map(|abc| abc[0] * abc[1] * abc[2])
-    	.collect();
-
-	totals[0]
-
+    let input = _input.into_iter();
+    let mut input2 = _input.into_iter();
+    let totals:Vec<Vec<InputNum>> = _input.into_iter()
+        .cartesian_product(input)
+        // .filter(|p| input2.any(|&a| a + p.0 + p.1 == 2020))
+        // .map(|(a,b)| (2020 - (a + b)) * a * b)
+        .map(|(a,b)| vec![*a,*b])
+        .collect();
+    println!("{:?}", &totals);
+    let _winrar:Vec<Vec<usize>> = totals.into_iter()
+        .filter(|v| input2.any(|&c| c + v[0] + v[1] == 2020))
+        .collect::<Vec<Vec<usize>>>();
+    // totals[0]
+    println!("{:?}", _winrar[0]);
+0
 }

@@ -36,8 +36,8 @@ fn test_real() {
 
 
 fn main() -> AnyhowResult<()> {
-    // const INPUTS: [&str; 1] = [EXAMPLE1];
-    const INPUTS: [&str; 2] = [EXAMPLE1, INPUT];
+    const INPUTS: [&str; 1] = [EXAMPLE1];
+    // const INPUTS: [&str; 2] = [EXAMPLE1, INPUT];
     // const INPUTS: [&str; 3] = [EXAMPLE1, EXAMPLE2, INPUT];
 
     for (row, input) in INPUTS.iter().enumerate() {
