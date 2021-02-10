@@ -25,18 +25,24 @@ pub fn parse_input(input: &str) -> AnyhowResult<Input> {
 
 pub fn part1(_input: &Input) -> InputNum {
     let input = _input.into_iter();
-    let pair:Vec<(&InputNum,&InputNum)> = _input.into_iter()
+    let totals:Vec<InputNum> = _input.into_iter()
     	.cartesian_product(input)
     	.filter(|p| p.0 + p.1 == 2020)
+    	.map(|(a,b)| a * b)
     	.collect();
-	// pair is [(a,b), (b,a)]
-	// only need the first as they are equal
-	let (a, b) = pair[0];
-	a * b
+	totals[0]
 }
 
 
 pub fn part2(_input: &Input) -> usize {
-    // let mut input = _input.clone();
-0
+    let input = _input.to_vec();
+    let inputs:Vec<&Vec<_>> = vec![&input, &input, &input];
+    let totals:Vec<InputNum> = inputs.into_iter()
+    	.multi_cartesian_product()
+    	.filter(|p| p[0] + p[1] + p[2] == 2020)
+    	.map(|abc| abc[0] * abc[1] * abc[2])
+    	.collect();
+
+	totals[0]
+
 }

@@ -21,6 +21,8 @@ fn test_example() {
     let input = parse_input(EXAMPLE1).unwrap();
     println!("let input: {} = {:?}", type_of(&input), &input);
     assert_eq!(514579, part1(&input));
+    assert_eq!(241861950, part2(&input));
+    
 }
 
 #[test]
@@ -28,6 +30,8 @@ fn test_real() {
     let input = parse_input(INPUT).unwrap();
     println!("let input: {} = {:?}", type_of(&input), &input);
     assert_eq!(1014171, part1(&input));
+    assert_eq!(46584630, part2(&input));
+
 }
 
 
