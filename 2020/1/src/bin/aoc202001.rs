@@ -17,10 +17,17 @@ use itertools::{Itertools, iproduct};
 use aoc202001::*;
 
 #[test]
-fn test_input() {
-    let input = parse_input(INPUT).unwrap();
-
+fn test_example() {
+    let input = parse_input(EXAMPLE1).unwrap();
     println!("let input: {} = {:?}", type_of(&input), &input);
+    assert_eq!(514579, part1(&input));
+}
+
+#[test]
+fn test_real() {
+    let input = parse_input(INPUT).unwrap();
+    println!("let input: {} = {:?}", type_of(&input), &input);
+    assert_eq!(1014171, part1(&input));
 }
 
 
@@ -31,7 +38,7 @@ fn main() -> AnyhowResult<()> {
 
     for (row, input) in INPUTS.iter().enumerate() {
         let items = parse_input(input)?;
-
+        // println!("items: {:?}", items);
         let result1 = part1(&items);
         println!("{} part1: {}", row, &result1);
     
