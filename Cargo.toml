@@ -1,13 +1,21 @@
 [package]
-name = "aoc"
-version = "0.1.0"
-authors = ["jw"]
+name = "adventofcode"
+version = "2.0.0"
+authors = ["Taneli Kaivola <2387813-tanelikaivola@users.noreply.gitlab.com>"]
 edition = "2018"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
+itertools = "^0.9.0"
+anyhow = "^1.0.0"
+thiserror = "^1.0.0"
+regex = "^1.4.0"
+parse-display = "^0.4.0"
+pom = "^3.2"
 
-[[bench]]
-name = "bench"
-harness = false
+[profile.release]
+lto = true
+codegen-units = 1
+debug = true
+
+[workspace]
+members = ["2020/*"]
