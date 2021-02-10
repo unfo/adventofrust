@@ -1,5 +1,5 @@
-Advent of Code
+# Advent of Code in Rust
 
-Stuff by Dist
+Solutions by me (jw).
 
-See also what I learned doing this: https://aoc2020.dist.fi/
+Code structure, libs, benchmark stuffs etc by (dist)[https://aoc2020.dist.fi/] <3
