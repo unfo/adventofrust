@@ -1,0 +1,22 @@
+[package]
+name = "aoc202002"
+version = "0.1.0"
+authors = ["jw"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+adventofcode = { path = "../.." }
+anyhow = "^1.0.0"
+itertools = "^0.9.0"
+regex = "^1.4.0"
+reformation = "^0.5.2"
+parse-display = "^0.4.0"
+rayon = "^1.5.0"
+criterion = "^0.3"
+petgraph = "0.5.1"
+
+[[bench]]
+name = "bench"
+harness = false

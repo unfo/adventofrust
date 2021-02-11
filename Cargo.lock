@@ -43,6 +43,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "aoc202002"
+version = "0.1.0"
+dependencies = [
+ "adventofcode",
+ "anyhow",
+ "criterion",
+ "itertools 0.9.0",
+ "parse-display",
+ "petgraph",
+ "rayon",
+ "reformation",
+ "regex",
+]
+
+[[package]]
 name = "aoctemplate"
 version = "0.1.0"
 dependencies = [
