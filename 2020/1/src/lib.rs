@@ -35,12 +35,11 @@ pub fn part1(_input: &Input) -> InputNum {
 
 pub fn part2(_input: &Input) -> usize {
     let input = _input.into_iter();
-    let mut _input2 = _input.into_iter();
-    let chosen:Option<(&InputNum, &InputNum)> = _input.into_iter()
+    let input_slice = &_input[..];
+    let chosen:Option<InputNum> = _input.into_iter()
         .cartesian_product(input)
-        .find(|&p| _input2.any(|&c| c + *p.0 + *p.1 == 2020));
-        // .find(|&p| input2.any(|&a| -> bool {a + *p.0 + *p.1 == 2020}));
-        // .map(|(a,b)| (2020 - a - b) * a * b);
-    println!("{:?}", chosen);
-0
+        .filter(|p| p.0 + p.1 < 2020)
+        .find(|p| input_slice.contains(&(2020 - p.0 - p.1)))
+        .map(|p| p.0 * p.1 * (2020 - p.0 - p.1));
+    chosen.unwrap_or_default()
 }
