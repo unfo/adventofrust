@@ -1,3 +1,5 @@
+extern crate adventofcode;
+
 use anyhow::{Result as AnyhowResult};
 #[allow(unused_imports)]
 use itertools::{Itertools};

@@ -1,5 +1,5 @@
 [package]
-name = "aoctemplate"
+name = "aoc202004"
 version = "0.1.0"
 authors = ["jw"]
 edition = "2018"

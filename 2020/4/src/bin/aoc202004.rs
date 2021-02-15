@@ -6,7 +6,9 @@ const INPUT: &str = include_str!("../../input");
 
 use anyhow::Result as AnyhowResult;
 
-use aoctemplate::*;
+extern crate adventofcode;
+
+use aoc202004::*;
 
 fn main() -> AnyhowResult<()> {
     // let INPUTS = [EXAMPLE1, EXAMPLE2, INPUT];
