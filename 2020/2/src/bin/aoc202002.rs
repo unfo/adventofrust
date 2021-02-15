@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 const EXAMPLE1: &str = include_str!("../../example1");
 // const EXAMPLE2: &str = include_str!("../../example2");
 #[allow(dead_code)]
@@ -38,7 +39,8 @@ fn test_real() {
 
 fn main() -> AnyhowResult<()> {
     // const INPUTS: [&str; 1] = [EXAMPLE1];
-    const INPUTS: [&str; 2] = [EXAMPLE1, INPUT];
+    const INPUTS: [&str; 1] = [INPUT];
+    // const INPUTS: [&str; 2] = [EXAMPLE1, INPUT];
     // const INPUTS: [&str; 3] = [EXAMPLE1, EXAMPLE2, INPUT];
 
     for (row, input) in INPUTS.iter().enumerate() {

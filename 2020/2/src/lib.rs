@@ -41,7 +41,7 @@ For example, 1-3 a means that the password must contain "a"
 at least 1 time and at most 3 times.
 **/
 pub fn part1(_input: &Input) -> Output {
-    println!("Total of {:?} lines", _input.len());
+    // println!("Total of {:?} lines", _input.len());
     let mut valid_lines: Output = 0;
     for line in _input.into_iter() {
         let caps = VALID_LINE.captures(line).unwrap();
@@ -74,18 +74,16 @@ Other occurrences of the letter are irrelevant for the purposes of
 policy enforcement.
 **/
 pub fn part2(_input: &Input) -> Output {
-    println!("Total of {:?} lines", _input.len());
+    // println!("Total of {:?} lines", _input.len());
     let mut valid_lines: Output = 0;
     for line in _input.into_iter() {
         let caps = VALID_LINE.captures(line).unwrap();
         let first: Output = caps["minimum"].parse().unwrap();
         let second: Output = caps["maximum"].parse().unwrap();
-        let letter = &caps["letter"].chars().next();
+        let letter = caps["letter"].chars().next().unwrap();
         let phrase = &caps["phrase"];
-        let len = phrase.chars().count();
-        let first_char = phrase.chars().nth(first + 1);
-        let second_char = phrase.chars().nth(second + 1);
-        if (first_char == *letter) || (len >= second+1 && second_char == *letter) {
+        let char_is:Vec<(usize, char)> = phrase.char_indices().collect();
+        if char_is.contains(&(first-1, letter)) ^ char_is.contains(&(second-1, letter)) {
             valid_lines += 1;
         }
     }
