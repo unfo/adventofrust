@@ -50,6 +50,7 @@ dependencies = [
  "anyhow",
  "criterion",
  "itertools 0.9.0",
+ "lazy_static",
  "parse-display",
  "petgraph",
  "rayon",

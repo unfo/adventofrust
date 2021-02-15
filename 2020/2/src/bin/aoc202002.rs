@@ -1,5 +1,6 @@
 const EXAMPLE1: &str = include_str!("../../example1");
 // const EXAMPLE2: &str = include_str!("../../example2");
+#[allow(dead_code)]
 const INPUT: &str = include_str!("../../input");
 
 
@@ -20,8 +21,8 @@ use aoc202002::*;
 fn test_example() {
     let input = parse_input(EXAMPLE1).unwrap();
     println!("let input: {} = {:?}", type_of(&input), &input);
-    assert_eq!(514579, part1(&input));
-    assert_eq!(241861950, part2(&input));
+    assert_eq!(2, part1(&input));
+    assert_eq!(1, part2(&input));
     
 }
 
@@ -29,8 +30,8 @@ fn test_example() {
 fn test_real() {
     let input = parse_input(INPUT).unwrap();
     println!("let input: {} = {:?}", type_of(&input), &input);
-    assert_eq!(1014171, part1(&input));
-    assert_eq!(46584630, part2(&input));
+    assert_eq!(424, part1(&input));
+    assert_eq!(747, part2(&input));
 
 }
 
