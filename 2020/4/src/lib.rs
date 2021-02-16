@@ -22,7 +22,7 @@ ecl (Eye Color)
 pid (Passport ID)
 cid (Country ID)
 **/
-#[allow(dead_code)]
+#[derive(Clone, Default)]
 pub struct Passport {
     byr: usize,
     iyr: usize,
@@ -36,11 +36,13 @@ pub struct Passport {
 fn parse_passport(passport_text: &str) -> Option<Passport> {
     let fields = passport_text.split_ascii_whitespace();
     let dict = HashMap::new();
-    let passport = Passport{  };
     for field in fields {
         let (key, value) = field.split_at(3);
-        passport = value;
+        dict[key] = value;
     }
+    let passport = Passport {  };
+    passport.byr = dict["byr"];
+    
     
     let dummy = Passport {
         byr: 0, iyr: 0, eyr: 0, hgt: String::from("0"), hcl: String::from("0"), ecl: String::from("0"), pid: 0,
